@@ -5,6 +5,14 @@ resource "azurerm_virtual_network" "this" {
   name                = var.vNet_config.name
 }
 
+output "vnet_name" {
+  value = azurerm_virtual_network.this.name
+}
+
+output "vnet_id" {
+  value = azurerm_virtual_network.this.id
+}
+
 resource "azurerm_subnet" "this" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.this.name
