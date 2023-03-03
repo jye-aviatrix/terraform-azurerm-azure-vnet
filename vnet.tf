@@ -5,6 +5,9 @@ resource "azurerm_virtual_network" "this" {
   name                = var.vNet_config.name
 }
 
+output "resource_group_name" {
+  value = var.resource_group_name
+}
 output "vnet_name" {
   value = azurerm_virtual_network.this.name
 }
